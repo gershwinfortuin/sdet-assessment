@@ -8,7 +8,7 @@ setHeadlessWhen(process.env.HEADLESS);
 setCommonPlugins();
 
 exports.config = {
-  tests: './*_test.js',
+  tests: 'tests/*_test.js',
   output: './output',
   helpers: {
     Puppeteer: {
@@ -18,8 +18,25 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    repl_pages: './pages/repl_pages.js'
   },
+
+  plugins: {
+    screenshotOnFail: {
+      enabled: true,
+      plugins: {
+          "mocha": {
+            "reporterOptions": {
+                "mochaFile": "output/result.xml"
+            }
+          },
+      }
+    
+
+    }
+  },
+
   bootstrap: null,
   mocha: {},
   name: 'sdet-assessment'

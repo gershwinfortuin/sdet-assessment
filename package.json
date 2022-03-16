@@ -16,5 +16,8 @@
         "@codeceptjs/ui": "^0.4.6",
         "codeceptjs": "^3.3.0",
         "playwright": "^1.19.2"
+    },
+    "dependencies": {
+        "mocha-junit-reporter": "^2.0.2"
     }
 }
